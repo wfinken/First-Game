@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuv4vme4rwno0"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
+[ext_resource type="PackedScene" uid="uid://cpf7kogmdnol0" path="res://scenes/main_menu.tscn" id="2_35572"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_l4ihi")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_35572")]
+
+[node name="PlayerHud" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PlayerHudBox" type="Control" parent="PlayerHud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PlayerHud/PlayerHudBox"]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 283.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerHud/PlayerHudBox/Panel"]
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 282.0
+
+[node name="Label" type="Label" parent="PlayerHud/PlayerHudBox/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Player position"
+
+[node name="PlayerPosition" type="Label" parent="PlayerHud/PlayerHudBox/Panel/VBoxContainer"]
+layout_mode = 2
